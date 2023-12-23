@@ -14,13 +14,16 @@ namespace TheLC.Plugins
     {
         [HarmonyPatch("Update")]
         [HarmonyPrefix]
+        public static void PrePatchUpdate(PlayerControllerB ___instance)
+        {
 
+        }
 
         [HarmonyPatch("Update")]
         [HarmonyPostfix]
         public static void PostPatchUpdate(PlayerControllerB ___instance ) 
         {
-            ___instance.sprintMeter = ModSettings.InfiniteStaminaConfig.Value == true ? 1f : ___sprintMeter;
+            ___instance.sprintMeter = ModSettings.InfiniteStaminaConfig.Value == true ? 1f : ___instance.sprintMeter;
             ___instance.jumpForce = ModSettings.JumpHeightConfig.Value;
             ___instance.movementSpeed = ModSettings.MovementSpeedConfig.Value;
             ___instance.climbSpeed = ModSettings.ClimbSpeedConfig.Value;
