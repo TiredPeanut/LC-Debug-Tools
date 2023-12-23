@@ -1,5 +1,6 @@
 ﻿using GameNetcodeStuff;
 using HarmonyLib;
+using Unity.Netcode;
 using UnityEngine;
 
 namespace TheLC.Plugins
@@ -48,6 +49,13 @@ namespace TheLC.Plugins
             {
                 __instance.localVisor.position = __instance.localVisor.position + __instance.localVisor.rotation * new Vector3(0f, 0f, -0.06f);
             }
+        }
+
+        [HarmonyPatch(typeof(PlayerControllerB))]
+        [HarmonyPatch("AllowPlayerDeath")]
+        public static bool PatchAllowPlayerDeath()
+        {
+            return !ModSettings.GodModeConfig.Value;
         }
 
         public static void CalculateVisorScale()

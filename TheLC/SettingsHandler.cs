@@ -30,6 +30,8 @@ namespace TheLC
 
             ModSettings.HideVisorConfig = Config.Bind(ModSettingCategories.Video, ModSettings.HideVisorKey, false, "Changes visor visability");
 
+            ModSettings.GodModeConfig = Config.Bind(ModSettingCategories.General, ModSettings.GodModeKey, false, "Enable God mode");
+
             RegisterSettingEvents();
         }
 
@@ -52,11 +54,6 @@ namespace TheLC
                 PlayerUpdate.hideVisor = ModSettings.HideVisorConfig.Value;
                 PlayerUpdate.CalculateVisorScale();
             }
-
-            //if (settingChangedEventArgs.ChangedSetting.Definition.Key == KeyboardShortcutExampleKey)
-            //{
-            //    KeyboardShortcut newValue = (KeyboardShortcut)settingChangedEventArgs.ChangedSetting.BoxedValue;
-            //}
         }
 
         public static void SetInitalValues()
@@ -84,8 +81,7 @@ namespace TheLC
         public static string GrabDistanceKey = "Item/Player Grab Distance";
         public static string FOVKey = "Player FOV";
         public static string HideVisorKey = "Hide Visor";
-
-        //public static string KeyboardShortcutExampleKey = "Recall Keyboard Shortcut";
+        public static string GodModeKey = "Enable God Mode";
 
         public static ConfigEntry<bool> InfiniteStaminaConfig;
         public static ConfigEntry<float> JumpHeightConfig;
@@ -95,7 +91,7 @@ namespace TheLC
         public static ConfigEntry<float> GrabDistanceConfig;
         public static ConfigEntry<float> FOVConfig;
         public static ConfigEntry<bool> HideVisorConfig;
-        //public static ConfigEntry<KeyboardShortcut> KeyboardShortcutExample;
+        public static ConfigEntry<bool> GodModeConfig;
     }
 
     public static class ModSettingCategories
