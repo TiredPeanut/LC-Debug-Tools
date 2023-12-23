@@ -32,6 +32,8 @@ namespace TheLC
 
             ModSettings.GodModeConfig = Config.Bind(ModSettingCategories.General, ModSettings.GodModeKey, false, "Enable God mode");
 
+            ModSettings.InfiniteDeadlineConfig = Config.Bind(ModSettingCategories.General, ModSettings.InfiniteDeadlineKey, false, "Enable infinite deadline");
+
             RegisterSettingEvents();
         }
 
@@ -73,15 +75,17 @@ namespace TheLC
 
     public static class ModSettings
     {
-        public static string InfiniteStaminaKey = "Infinite Stamina";
-        public static string JumpHeightKey = "Jump Height";
-        public static string MovementSpeedKey = "Movement Speed";
-        public static string ClimbSpeedKey = "Climb Speed";
-        public static string ThrowPowerKey = "Throw Item/Player Power";
-        public static string GrabDistanceKey = "Item/Player Grab Distance";
-        public static string FOVKey = "Player FOV";
-        public static string HideVisorKey = "Hide Visor";
-        public static string GodModeKey = "Enable God Mode";
+        public const string InfiniteStaminaKey = "Infinite Stamina";
+        public const string JumpHeightKey = "Jump Height";
+        public const string MovementSpeedKey = "Movement Speed";
+        public const string ClimbSpeedKey = "Climb Speed";
+        public const string ThrowPowerKey = "Throw Item/Player Power";
+        public const string GrabDistanceKey = "Item/Player Grab Distance";
+        public const string FOVKey = "Player FOV";
+        public const string HideVisorKey = "Hide Visor";
+        public const string GodModeKey = "Enable God Mode";
+        public const string InfiniteDeadlineKey = "Infinite Deadline";
+
 
         public static ConfigEntry<bool> InfiniteStaminaConfig;
         public static ConfigEntry<float> JumpHeightConfig;
@@ -92,6 +96,7 @@ namespace TheLC
         public static ConfigEntry<float> FOVConfig;
         public static ConfigEntry<bool> HideVisorConfig;
         public static ConfigEntry<bool> GodModeConfig;
+        public static ConfigEntry<bool> InfiniteDeadlineConfig;
     }
 
     public static class ModSettingCategories
