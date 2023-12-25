@@ -34,6 +34,8 @@ namespace TheLC
 
             ModSettings.InfiniteDeadlineConfig = Config.Bind(ModSettingCategories.General, ModSettings.InfiniteDeadlineKey, false, "Enable infinite deadline");
 
+            ModSettings.CanCrouchConfig = Config.Bind(ModSettingCategories.Advanced, ModSettings.CanCrouchKey, true, "Enables ability to crouch");
+
             RegisterSettingEvents();
         }
 
@@ -85,7 +87,7 @@ namespace TheLC
         public const string HideVisorKey = "Hide Visor";
         public const string GodModeKey = "Enable God Mode";
         public const string InfiniteDeadlineKey = "Infinite Deadline";
-
+        public const string CanCrouchKey = "Can Crouch";
 
         public static ConfigEntry<bool> InfiniteStaminaConfig;
         public static ConfigEntry<float> JumpHeightConfig;
@@ -97,12 +99,16 @@ namespace TheLC
         public static ConfigEntry<bool> HideVisorConfig;
         public static ConfigEntry<bool> GodModeConfig;
         public static ConfigEntry<bool> InfiniteDeadlineConfig;
+
+
+        public static ConfigEntry<bool> CanCrouchConfig;
     }
 
     public static class ModSettingCategories
     {
         public const string General = "General";
         public const string Video = "Video";
+        public const string Advanced = "Advanced";
     }
 
     public static class ModConstraints

@@ -24,9 +24,7 @@ namespace TheLC.Plugins
                 var localPlayer = GameNetworkManager.Instance.localPlayerController;
                 TeleportPlayerToRandomDungeonLocation(localPlayer);
                 BaseMonsterChanges();
-
                 ChangePlayerToSpringMan();
-
             }
                 
         }
@@ -55,6 +53,7 @@ namespace TheLC.Plugins
         {
             ModSettings.JumpHeightConfig.Value = 0f; //Turn off jump
             ModSettings.GrabDistanceConfig.Value = 0f; //Turn off interactions
+            ModSettings.CanCrouchConfig.Value = false;
         }
 
        

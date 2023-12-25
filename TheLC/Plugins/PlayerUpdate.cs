@@ -51,11 +51,11 @@ namespace TheLC.Plugins
             }
         }
 
-        [HarmonyPatch(typeof(PlayerControllerB))]
-        [HarmonyPatch("AllowPlayerDeath")]
-        public static bool PatchAllowPlayerDeath()
+        [HarmonyPatch("Crouch_performed")]
+        [HarmonyPrefix]
+        public static void PatchPreCrouch(Inp)
         {
-            return !ModSettings.GodModeConfig.Value;
+            
         }
 
         public static void CalculateVisorScale()
